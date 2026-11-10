@@ -1,0 +1,740 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09090d;
+    color: #f5f5f5;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+:root {
+    --vermelho: #ed0808;
+    --fundo: #09090d;
+    --cartao: #17171f;
+    --borda: #292932;
+    --cinza: #9999a8;
+}
+
+
+/* ========================================
+   FAIXAS DECORATIVAS
+======================================== */
+
+.faixa-corrida {
+    height: 9px;
+    background: repeating-linear-gradient(
+        90deg,
+        #f5f5f5 0px,
+        #f5f5f5 22px,
+        #ed0808 22px,
+        #ed0808 44px
+    );
+}
+
+
+/* ========================================
+   ESTRUTURA
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.secao {
+    padding-top: 42px;
+    padding-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    background: #0c0c11;
+    border-bottom: 1px solid #24242b;
+}
+
+.navegacao {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+}
+
+.logo span,
+.rodape strong span {
+    color: var(--vermelho);
+}
+
+.navegacao nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navegacao nav a {
+    color: #aaaab5;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navegacao nav a:hover {
+    color: white;
+}
+
+.botao-comprar {
+    background: var(--vermelho);
+    color: white;
+    padding: 14px 22px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.botao-comprar:hover,
+.botao-vermelho:hover,
+.botao-reservar:hover {
+    background: #bd0000;
+}
+
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.hero {
+    min-height: 390px;
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    overflow: hidden;
+    background: #0c0c11;
+}
+
+.hero-conteudo {
+    padding: 45px 7%;
+}
+
+.etiqueta {
+    color: var(--vermelho);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(55px, 7vw, 88px);
+    font-style: italic;
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--vermelho);
+}
+
+.hero-conteudo p {
+    max-width: 420px;
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.botao-vermelho,
+.botao-contorno {
+    padding: 13px 20px;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.botao-vermelho {
+    background: var(--vermelho);
+    color: white;
+}
+
+.botao-contorno {
+    border: 1px solid white;
+    color: white;
+}
+
+.botao-contorno:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ========================================
+   IMAGEM DO CARRO
+======================================== */
+
+.hero-imagem {
+    height: 390px;
+    position: relative;
+    background:
+        radial-gradient(ellipse at 60% 70%, #37373c 0%, transparent 45%),
+        linear-gradient(140deg, #272c32, #101014 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-imagem::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 45%;
+    background: repeating-linear-gradient(
+        120deg,
+        #34343b 0px,
+        #34343b 3px,
+        transparent 3px,
+        transparent 13px
+    );
+    transform: rotate(-15deg);
+    opacity: 0.4;
+}
+
+.carro-visual {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(100px, 15vw, 190px);
+    transform: rotate(-12deg);
+    filter: drop-shadow(0 15px 12px #000);
+}
+
+.estatisticas {
+    position: absolute;
+    bottom: 22px;
+    left: 10%;
+    right: 10%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.estatisticas div {
+    display: flex;
+    flex-direction: column;
+}
+
+.estatisticas strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.estatisticas small {
+    color: #bdbdc7;
+    font-size: 9px;
+}
+
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.titulo-secao {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.titulo-secao span {
+    color: var(--vermelho);
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+
+/* ========================================
+   GRID DE PILOTOS
+======================================== */
+
+.grid-pilotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.piloto {
+    background: var(--cartao);
+    padding: 18px;
+    border-top: 3px solid #555;
+    min-height: 115px;
+}
+
+.piloto strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 46px;
+    line-height: 1;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.piloto p {
+    font-size: 12px;
+}
+
+.piloto small {
+    display: block;
+    color: var(--cinza);
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.ferrari {
+    border-color: #ed174c;
+}
+
+.ferrari strong {
+    color: #ed174c;
+}
+
+.mclaren {
+    border-color: #ff8000;
+}
+
+.mclaren strong {
+    color: #ff8000;
+}
+
+.mercedes {
+    border-color: #00d5b5;
+}
+
+.mercedes strong {
+    color: #00d5b5;
+}
+
+.audi {
+    border-color: #aaaab5;
+}
+
+.audi strong {
+    color: #aaaab5;
+}
+
+
+/* ========================================
+   FILTROS DA CLASSIFICAÇÃO
+======================================== */
+
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 15px;
+}
+
+.campo-busca,
+.campo-equipe {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filtros label,
+.campo label {
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--cinza);
+}
+
+.filtros input,
+.filtros select {
+    height: 42px;
+    width: 100%;
+    background: #101015;
+    border: 1px solid var(--borda);
+    color: white;
+    padding: 0 12px;
+    outline: none;
+}
+
+.filtros input:focus,
+.filtros select:focus {
+    border-color: var(--vermelho);
+}
+
+.botao-filtrar {
+    height: 42px;
+    padding: 0 22px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.botao-filtrar:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ========================================
+   TABELA DE CLASSIFICAÇÃO
+======================================== */
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background: var(--cartao);
+    font-size: 12px;
+}
+
+thead {
+    background: #1b1b24;
+}
+
+th {
+    padding: 14px 10px;
+    text-align: left;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--cinza);
+}
+
+td {
+    padding: 13px 10px;
+    border-top: 1px solid #292932;
+    color: #d2d2dc;
+}
+
+tbody tr:hover {
+    background: #22222b;
+}
+
+.lider {
+    background: #32171c;
+}
+
+.posicao {
+    background: #f4f4f4;
+    color: #111;
+    padding: 4px 8px;
+    font-weight: 900;
+}
+
+.lider .posicao {
+    background: var(--vermelho);
+    color: white;
+}
+
+.piloto-nome {
+    border-left: 3px solid var(--vermelho);
+    padding-left: 10px;
+}
+
+
+/* ========================================
+   ÁREA DE INGRESSOS
+======================================== */
+
+.ingressos {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.descricao-ingressos {
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.aviso {
+    background: #27210e;
+    border-left: 3px solid #e6cf00;
+    padding: 14px;
+    color: #ffe500;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.preco-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--borda);
+    font-size: 12px;
+}
+
+.preco-item strong {
+    color: var(--vermelho);
+}
+
+
+/* ========================================
+   FORMULÁRIO DE INGRESSOS
+======================================== */
+
+.formulario-ingresso {
+    background: var(--cartao);
+    border-top: 3px solid var(--vermelho);
+    padding: 25px;
+}
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    background: #0d0d12;
+    border: 1px solid #292932;
+    padding: 12px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--vermelho);
+}
+
+.campo input[type="file"] {
+    padding: 10px;
+}
+
+.campo small {
+    color: #858591;
+    font-size: 9px;
+}
+
+.campo-completo {
+    margin-top: 20px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.botao-reservar {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: var(--vermelho);
+    color: white;
+    border: none;
+    font-weight: 900;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.rodape {
+    padding: 30px 15px;
+    text-align: center;
+    border-top: 1px solid #24242b;
+    color: #777783;
+    font-size: 10px;
+}
+
+.rodape strong {
+    color: white;
+    font-style: italic;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - TABLETS
+======================================== */
+
+@media (max-width: 850px) {
+
+    .hero {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .grid-pilotos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ingressos {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .navegacao {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 18px 0;
+    }
+
+    .navegacao nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .navegacao nav a {
+        font-size: 10px;
+    }
+
+    .botao-comprar {
+        padding: 11px;
+        font-size: 9px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-conteudo {
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero-imagem {
+        height: 230px;
+    }
+
+    .carro-visual {
+        font-size: 110px;
+    }
+
+    .estatisticas strong {
+        font-size: 24px;
+    }
+
+    .secao {
+        padding-top: 30px;
+    }
+
+    .titulo-secao {
+        font-size: 26px;
+    }
+
+    .grid-pilotos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .piloto {
+        padding: 13px;
+    }
+
+    .piloto strong {
+        font-size: 38px;
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .botao-filtrar {
+        width: 100%;
+    }
+
+    .formulario-ingresso {
+        padding: 18px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+    }
+
+    .ingressos {
+        gap: 20px;
+    }
+
+}
